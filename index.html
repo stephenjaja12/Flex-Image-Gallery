@@ -115,14 +115,14 @@
                     this.classList.toggle('open');
                     
                  }
-                 function restoreDefualtTransform(){
-                    if(e.propertName.includes('flex')) {
-                        e.classList.toggle('open-active');
-                    }
+                //  function restoreDefualtTransform(){
+                //     if(e.propertName.includes('flex')) {
+                //         e.classList.toggle('open-active');
+                //     }
 
-                 }
+                //  }
                  Array.from(allPanels).forEach(panel => panel.addEventListener('click', toggleOpen));//function(panel){panel.addeventlistener('click' toggleOpen)}
-                 allPanels.forEach(panel => panel.addEventListener('click', restoreDefualtTransform));//function(panel){panel.addeventlistener('click' toggleOpen)}
+                //  allPanels.forEach(panel => panel.addEventListener('click', restoreDefualtTransform));//function(panel){panel.addeventlistener('click' toggleOpen)}
 
              </script>
     </body>
