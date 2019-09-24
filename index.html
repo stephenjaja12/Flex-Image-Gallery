@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex Image Gallery</title>
+        <link rel="style-sheet" type="text/css" href="css/index.css">
+    </head>
+    <body>
+        <div class="panels">
+            <div class="allPanels panel1">
+                <p>Hey</p>
+                <p>Let's</p>
+                <p>Dance</p>
+            </div>
+            <div class="allPanels panel2">
+                <p>Give</p>
+                <p>Take</p>
+                <p>Recieve</p>
+            </div>
+            <div class="allPanels panel3">
+                <p>Experience</p>
+                <p>It</p>
+                <p>Today</p>
+            </div>
+            <div class="allPanels panel4">
+                <p>Give</p>
+                <p>All</p>
+                <p>YOU CAN</p>
+            </div>
+            <div class="allPanels panel5">
+                <p>lIFE</p>
+                <p>iN</p>
+                <p>Motion</p>
+            </div>
+        </div>
+        <style> 
+                html{
+                   box-sizing: border-box;
+                   background:#ffc600;
+                   font-family:'helvetica neue';
+                   font-size: 20px;
+                   font-weight: 200;
+                   overflow: hidden;
+                }
+                .body{
+                   margin: auto; 
+                   
+                }
+                .panels{
+                    display: flex;
+                    min-height: 100vh;
+                }
+                .panel1{
+                    background-image: url("dancers.jpg");
+                }
+                .panel2{
+                    background-image: url("camera.jpg");
+                }
+                .panel3{
+                    background-image: url("hikers.jpg");
+                }
+                .panel4{
+                    background-image: url("fox.jpg");
+                }
+                .panel5{
+                    background-image: url("sky-image.jpeg");
+                }
+                .allPanels {
+                    background-color:#6B0F9C;
+                    box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+                    color:white;
+                    text-align: center;
+                    align-items:center;
+                    /* Safari transitionend event.propertyName === flex */
+                    /* Chrome + FF transitionend event.propertyName === flex-grow */
+                    transition:
+                        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+                        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+                        background 0.2s;
+                    font-size: 20px;
+                    background-size:cover;
+                    background-position:center;
+                    flex: 1;
+                    justify-content: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .allPanels p:first-of-type{
+                     transform: translateY(-1235%);
+                }
+                .allPanels p:last-of-type{
+                     transform: translateY(1161%);
+                     display: none;
+                }
+                .allPanels.open-active p:first-of-type{
+                     transform:  translateY(0%);
+                }
+                .allPanels.open-active p:last-of-type{
+                     transform: translateY(0%);
+                }
+                .open {
+                    flex: 5;
+                     font-size: 4rem; 
+                }
+                
+                
+
+
+             </style>
+             <script>
+                 // create a constant that cotaiins all panels
+                 const allPanels = document.querySelectorAll('.allPanels');
+                 //create a function that add class list on toggle
+                 function toggleOpen(){
+                   //this refers to the element which the funciton is currently applied to
+                    this.classList.toggle('open');
+                    
+                 }
+                 function restoreDefualtTransform(){
+                    if(e.propertName.includes('flex')) {
+                        e.classList.toggle('open-active');
+                    }
+
+                 }
+                 Array.from(allPanels).forEach(panel => panel.addEventListener('click', toggleOpen));//function(panel){panel.addeventlistener('click' toggleOpen)}
+                 allPanels.forEach(panel => panel.addEventListener('click', restoreDefualtTransform));//function(panel){panel.addeventlistener('click' toggleOpen)}
+
+             </script>
+    </body>
+</html>

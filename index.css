@@ -1,0 +1,9 @@
+.panel1{
+    background-image: url(sky-image.jpg)
+}
+.panels{
+    display: flex;
+}
+.color{
+    color: blue;
+}
